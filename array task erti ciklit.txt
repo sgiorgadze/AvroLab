@@ -1,0 +1,26 @@
+let array1 = [
+  [3, 8, 9, 7, 6],
+  [6, 3, 8, 9, 7],
+  [7, 6, 3, 8, 9],
+];
+let ar2 = [
+  [2, 3, 1],
+  [5, 8, 0],
+  [1, 0, 3],
+];
+
+function perimetr(a) {
+  const row = a.length; // 3
+  const col = a[0].length; //5
+  let sum = 0;
+
+  for (let i = 0; i < col; i++) {
+    sum = sum + a[0][i] + a[row - 1][i];
+    //console.log(a[0][i], a[row - 1][i]);
+    if (i < row - 2) {
+      sum = sum + a[i + 1][0] + a[i + 1][col - 1];
+    }
+  }
+  return sum;
+}
+console.log(perimetr(ar2));
